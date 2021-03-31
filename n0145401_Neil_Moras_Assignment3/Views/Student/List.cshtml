@@ -1,0 +1,17 @@
+﻿@model IEnumerable<n0145401_Neil_Moras_Assignment3.Models.Student>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2 class="student-list-head">List Students</h2>
+<p class="student-para">Here is a list of students who are enrolled for the Winter 2018 intake</p>
+@{ 
+
+    foreach(var student in Model)
+    {
+    <div class="student-list-name"><a href="/Student/Show/@student.StudentId">@student.StudentFname @student.StudentLname</a></div>
+
+
+       
+    }
+}

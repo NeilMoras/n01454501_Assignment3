@@ -1,0 +1,17 @@
+﻿@model  IEnumerable<n0145401_Neil_Moras_Assignment3.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2 class="teacher-list-heading">Teachers List</h2>
+<p class="teacher-para">Here is th a list of teachers who would be teaching for the Winter 2018 intake </p>
+
+<form action="/Teacher/List" method="GET">
+    <input type=" ="text" name="SearchKey"/>
+    <input type="submit" value="Search"/>
+</form>
+
+@foreach(var teacher in Model)
+{
+    <div class="teacher-list-name"><a href ="/Teacher/Show/@teacher.TeacherId">@teacher.TeacherFname @teacher.TeacherLname</a></div>
+}

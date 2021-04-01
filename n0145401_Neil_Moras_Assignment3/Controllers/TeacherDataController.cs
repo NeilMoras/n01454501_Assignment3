@@ -32,7 +32,7 @@ namespace n0145401_Neil_Moras_Assignment3.Controllers
             //creates a new command to run the query from the database
             MySqlCommand Command = Connection.CreateCommand();
             // allows to write a query and send it to the database to retrive the information from teachers table
-            Command.CommandText = "select * from teachers where lower(teacherfname) like  lower(@key) or lower(teacherlname) like lower(@key) or lower(concat(teacherfname, ' ', teacherlname)) like lower(@key)";
+            Command.CommandText = "select * from teachers where lower(teacherfname) like  lower(@key) or lower(teacherlname) like lower(@key) or lower(concat(teacherfname, ' ', teacherlname)) like lower(@key) or hiredate like @key or salary like @key";
 
 
             Command.Parameters.AddWithValue("@key", "%" + SearchKey + "%");

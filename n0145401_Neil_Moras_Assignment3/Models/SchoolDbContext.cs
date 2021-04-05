@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient; // getting access to tthe mt Sql nuGetPackage
 
 namespace n0145401_Neil_Moras_Assignment3.Models
 {
     public class SchoolDbContext
     {
       
-        
+        //Readonly credentials to access the mysql databale and tables from Mamp
             private static string User { get { return "root"; } }
 
             private static string Password { get { return "root"; } }
@@ -19,10 +19,12 @@ namespace n0145401_Neil_Moras_Assignment3.Models
             private static string Server { get { return "localhost"; } }
 
             private static string Port { get { return "3306"; } }
-
+          
+        //Creating a series of credentials to access the database
 
             protected static string ConnectionString
             {
+            //zero datetime coverts the datesto to 0000-00-00 if the ddates re null in any of the rows of the table
                 get
                 {
                     return "server = " + Server
